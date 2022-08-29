@@ -1,3 +1,4 @@
 /data
 /venv
-/__pycagche__
+/__pycache__
+/.idea
