@@ -105,7 +105,16 @@
          /* *****************EDIT  */
 
         .guidence_message {
+            position: fixed;
             padding: 20px;
+            width: 210px;
+            height: 60px;
+            border-radius: 7px;
+            border-style: solid;
+            border-color: #0084CC;
+            margin-left: 20px;
+            top: 100px;
+            left: 40px;
             background-color: #f44336;
             color: white;
         }
@@ -423,12 +432,16 @@
 
 <body id="capture">
 <div id="viewDiv"></div>
-<div id="popUpForPlacingPanel" class="popUp">
-        <!-- edit point -->
-    <div class="guidence_message">
-        <span class="closeMsg" onclick="this.parentElement.style.display='none';">&times;</span> 
+<div class="guidence_message">
+        <span class="closeMsg" onclick="this.parentElement.style.display='none';">&times;</span>
         <strong>Note</strong> Please reload the webpage if the solar panel board is not loaded.
     </div>
+<div id="popUpForPlacingPanel" class="popUp">
+        <!-- edit point -->
+{#    <div class="guidence_message">#}
+{#        <span class="closeMsg" onclick="this.parentElement.style.display='none';">&times;</span> #}
+{#        <strong>Note</strong> Please reload the webpage if the solar panel board is not loaded.#}
+{#    </div>#}
     <!-- edit point -->
 
     <div class="popUpContent_functions"
