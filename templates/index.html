@@ -311,6 +311,20 @@
         table, td, th {
             border: 1px solid black;
         }
+        .refreshBtn {
+            text-align: center;
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* Darker background on mouse-over */
+        .refreshBtn:hover {
+            background-color: RoyalBlue;
+        }
 
         .sbutton {
             display: inline;
@@ -1518,10 +1532,14 @@ Debug phase _> change back to working versionn -->
 
     <!-- SideBar information -->
     <div id="SideBar_info">
-
         <div id="loader-container" style="display: none;">
             <p id="loadingText">Loading</p>
         </div>
+
+        <button class="refreshBtn" title="Refresh data." style="width:100%; margin-top:-100px"
+            id="refreshBtn">
+        <i class="fa fa-refresh"></i> Refresh
+    </button>
 
         <p id="Data_for_10%_windiest_areas"
            style="background:#ffffff; font-weight:30; font-size: 16px; color:#282c34; padding:20px; padding-left: 35px; margin-left:-20px; margin-top: -20px">
@@ -1670,7 +1688,7 @@ Debug phase _> change back to working versionn -->
 
             <!-- Calculate button -->
             <div style="width:80px; overflow:hidden; background:#0084CC; padding:5px; margin-top:-70px; margin-bottom:25px; margin-left:100px; border-radius: 7px;">
-                <button id="calculateBtn" value="myValue" onclick= "getNum()">
+                <button id="calculateBtn" value="myValue">
                     <p title="Calculate the ROI and IRR for the selected energy in selected area."
                        style="background:#0084CC ;font-weight:10;font-size:16px; color:white">
                         Calculate</p>
@@ -1862,6 +1880,7 @@ Debug phase _> change back to working versionn -->
         var div = document.getElementById('background');
         var close = document.getElementById('close-button');
         var cal_btn = document.getElementById('calculateBtn');
+        var ref_btn = document.getElementById('refreshBtn');
 
 
         // edit point -> change to last version
@@ -1942,6 +1961,17 @@ Debug phase _> change back to working versionn -->
                 
             })
         }
+        ref_btn.onclick =  function refresh() {
+        if (show_mode == 1) {
+            toSolarMode();
+        } else if (show_mode == 2) {
+            toWindMode();
+        } else if (show_mode == 3) {
+            toStorageMode();
+        } else if (show_mode == 4) {
+            toBatteryMode();
+        }
+    }
     </script>
 
 
@@ -2200,8 +2230,6 @@ Debug phase _> change back to working versionn -->
             }
 
         }
-
-  
 
         function cal_fee() {
             energy_generation = 0;
@@ -2576,10 +2604,7 @@ Debug phase _> change back to working versionn -->
             
             
     }
-  
 
-
-    
         //jsPDF download function
         function downloadPDFfromHTML() {
             getCookies();
@@ -3156,6 +3181,7 @@ Debug phase _> change back to working versionn -->
 
         document.getElementById("calculate_energy").style.display = "block";
         document.getElementById("two_btn").style.display = "inline";
+        document.getElementById("refreshBtn").style.display = "inline";
 
         // document.getElementById("calculate_energy").innerHTML = "";
         //
@@ -3174,7 +3200,6 @@ Debug phase _> change back to working versionn -->
         //     document.getElementById("cost_c").value = panel_capacity * 0.4;
         //     cost_value = panel_capacity * 0.4;
         // }
-
         document.getElementById("Data_for_10%_windiest_areas").innerHTML = "Specific Photovoltaic Power output:<br> " + pvout.toFixed(2) + " kWh/kWp";
         document.getElementById("Power_Density").innerHTML = "Direct Normal Irradiation:<br> " + dni.toFixed(2) + " kWh/m²";
         document.getElementById("Wind_Speed").innerHTML = "Global Horizontal Irradiation:<br> " + ghi.toFixed(2) + " kWh/m²";
@@ -3517,6 +3542,8 @@ Debug phase _> change back to working versionn -->
             "        <div id=\"loader-container\">\n" +
             "            <p id=\"loadingText\">Loading</p>\n" +
             "        </div>" +
+
+
             "<p id=\"null_1\"\n" +
             "           style=\"background:#ffffff; font-weight:30; font-size: 16px; color:#282c34; padding:20px; padding-left: 35px; margin-left:-20px; margin-top: -20px\">\n" +
             "           \n </p>\n" +
@@ -3560,6 +3587,9 @@ Debug phase _> change back to working versionn -->
     function backToOrigin() {
 
         document.getElementById("SideBar_info").innerHTML = "        " +
+            "<button class=\"refreshBtn\" title=\"Refresh data.\" style=\"width:100%; margin-top:-100px\"id= \"refreshBtn\">\n"+
+            "<i class=\"fa fa-refresh\"></i> Refresh \n" +
+            "</button>"+
             "        <p id=\"Data_for_10%_windiest_areas\"\n" +
             "           style=\"background:#ffffff; font-weight:30; font-size: 16px; color:#282c34; padding:20px; padding-left: 35px; margin-left:-20px; margin-top: -20px\">\n" +
             "            Data for 10% windiest areas </p>\n" +
