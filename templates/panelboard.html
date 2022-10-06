@@ -290,15 +290,13 @@
         }
     }
 
-    a_count=0;
-    b_count=0;
-    count_list=[];
-
     function addToReport(){
+        a_count=0;
+        b_count=0;
+        count_list=[];
         // alert(dynamicLayerMap.keySet())
         if (dynamicLayerMap.size() !== 0) {
             for (var m of dynamicLayerMap.keySet()) {
-
                 if (m.charAt(m.length-1)==="1"){
                     a_count+=1;
                 }
@@ -309,7 +307,7 @@
         }
         count_list=[a_count,b_count];
         document.cookie = count_list.toString();
-        // alert(document.cookie)
+
     }
 
     function HashMap() {
