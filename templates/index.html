@@ -1536,11 +1536,6 @@ Debug phase _> change back to working versionn -->
             <p id="loadingText">Loading</p>
         </div>
 
-        <button class="refreshBtn" title="Refresh data." style="width:100%; margin-top:-100px"
-            id="refreshBtn">
-        <i class="fa fa-refresh"></i> Refresh
-    </button>
-
         <p id="Data_for_10%_windiest_areas"
            style="background:#ffffff; font-weight:30; font-size: 16px; color:#282c34; padding:20px; padding-left: 35px; margin-left:-20px; margin-top: -20px">
             Data for 10% windiest areas </p>
@@ -1557,6 +1552,10 @@ Debug phase _> change back to working versionn -->
     <br><br>
      <!-- remove return code in onsubmit -->
     <form id = "form1" action="/main/form" ,method="get" , target="the_Frame", onsubmit="check_submit()">
+        <button class="refreshBtn" title="Refresh data." style="position:relative;top:-50px; width: 100%"
+            id="refreshBtn">
+        <i class="fa fa-refresh"></i> Refresh
+    </button>
         <div style="background:#c9e1ee;padding-bottom:65px;padding-left:0px" id="calculate_energy">
             <p style="background:#c9e1ee ;font-weight:10;font-size:16px; color:#818181;padding:20px;padding-left:35px;margin-left:-20px;margin-top: -48px; ">
                 project term:
@@ -1685,7 +1684,6 @@ Debug phase _> change back to working versionn -->
                         Submit</p>
                 </button>
             </div>
-
             <!-- Calculate button -->
             <div style="width:80px; overflow:hidden; background:#0084CC; padding:5px; margin-top:-70px; margin-bottom:25px; margin-left:100px; border-radius: 7px;">
                 <button id="calculateBtn" value="myValue">
@@ -1961,6 +1959,7 @@ Debug phase _> change back to working versionn -->
                 
             })
         }
+
         ref_btn.onclick =  function refresh() {
         if (show_mode == 1) {
             toSolarMode();
@@ -3587,9 +3586,6 @@ Debug phase _> change back to working versionn -->
     function backToOrigin() {
 
         document.getElementById("SideBar_info").innerHTML = "        " +
-            "<button class=\"refreshBtn\" title=\"Refresh data.\" style=\"width:100%; margin-top:-100px\"id= \"refreshBtn\">\n"+
-            "<i class=\"fa fa-refresh\"></i> Refresh \n" +
-            "</button>"+
             "        <p id=\"Data_for_10%_windiest_areas\"\n" +
             "           style=\"background:#ffffff; font-weight:30; font-size: 16px; color:#282c34; padding:20px; padding-left: 35px; margin-left:-20px; margin-top: -20px\">\n" +
             "            Data for 10% windiest areas </p>\n" +
