@@ -2,7 +2,7 @@ import pandas as pd
 from math import sin, cos, sqrt, atan2, radians
 
 # Read the map information
-df=pd.read_csv('Energy Grid Data.csv', sep=',',header=None)
+df=pd.read_csv('Energy_Grid_Data.csv', sep=',',header=None)
 my_data=df.values
 
 # This function is used to calculate the distance of two points in the map
