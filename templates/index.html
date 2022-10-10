@@ -1231,8 +1231,8 @@ Debug phase _> change back to working versionn -->
 
 <div class="selectDraw">
     <h1 style="margin-left:-3px;background-color:#ffffff;width:130px;text-align: center"><b>Select Area</b></h1>
-    <button class="btn success" onclick="changetopoint()">&#8226<span class="tooltiptext">Single Point<br>Data Select</span></button>
-    <button class="btn info" onclick="changetopolygon()">&#9826;<span class="tooltiptext">Polygon Regional Data Select (double click to finish)</span>
+    <button id="point" class="btn success" onclick="changetopoint()">&#8226<span class="tooltiptext">Single Point<br>Data Select</span></button>
+    <button id = "polygon" class="btn info" onclick="changetopolygon()">&#9826;<span class="tooltiptext">Polygon Regional Data Select (double click to finish)</span>
     </button>
     <button class="btn warning" onclick="changetonan()">&#10008<span class="tooltiptext">Remove Selection</span>
     </button>
@@ -2955,6 +2955,11 @@ Debug phase _> change back to working versionn -->
 <script>
 
     function changetopoint() {
+        var point = document.getElementById("point");
+        point.style.backgroundColor = 'lightgray';
+
+        var polygon = document.getElementById("polygon");
+        polygon.style.backgroundColor = '#ffffff';
         console.log("C")
         if (drawselection != 1) {
             drawselection = 1;
@@ -2966,6 +2971,12 @@ Debug phase _> change back to working versionn -->
 
 
     function changetopolygon() {
+        var polygon = document.getElementById("polygon");
+        polygon.style.backgroundColor = 'lightgray';
+
+        var point = document.getElementById("point");
+        point.style.backgroundColor = '#ffffff';
+
         console.log("B")
         console.log(drawselection)
         if (drawselection != 2) {
@@ -2976,6 +2987,12 @@ Debug phase _> change back to working versionn -->
     }
 
     function changetonan() {
+        var point = document.getElementById("point");
+        point.style.backgroundColor = '#ffffff';
+
+        var polygon = document.getElementById("polygon");
+        polygon.style.backgroundColor = '#ffffff';
+
         console.log("A")
         drawselection = 0;
         clearall();

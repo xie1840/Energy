@@ -7,7 +7,7 @@ from geopy.point import Point
 
 
 def get_country(lat,lon):
-    geolocator = Nominatim(user_agent='demo_of_gnss_help')
+    geolocator = Nominatim(user_agent='demo_of_gnss_help', timeout=20)
     point=Point(lat,lon)
     try:
         location = geolocator.reverse(point)
