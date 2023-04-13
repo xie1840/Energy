@@ -3300,6 +3300,35 @@ Debug phase _> change back to working versionn -->
         document.getElementById("Wind_Speed").innerHTML = "Separation:<br> " + separation + " km";
 
         var energy_info = document.getElementById("energy_info");
+         if (has_button1){
+           var storage_app_btn = document.createElement("input");
+           storage_app_btn.type = "button";
+           storage_app_btn.value = "Apply Loan";
+           storage_app_btn.style.width = "90px";
+           storage_app_btn.style.border = "none";
+           storage_app_btn.style.background = "#0084CC";
+           storage_app_btn.style.color = "white";
+           storage_app_btn.style.padding = "5px";
+           storage_app_btn.style.marginTop = "-100px";
+           storage_app_btn.style.marginBottom = "30px";
+           storage_app_btn.style.marginLeft = "15px";
+           storage_app_btn.style.borderRadius = "7px";
+           document.getElementById("storage_result_bar").insertBefore(storage_app_btn,document.getElementById("storage_result_bar").firstChild);
+           var storage_cal_btn = document.createElement("input");
+           storage_cal_btn.type = "button";
+           storage_cal_btn.value = "Calculate";
+           storage_cal_btn.style.width = "90px";
+           storage_cal_btn.style.border = "none"
+           storage_cal_btn.style.background = "#0084CC";
+           storage_cal_btn.style.color = "white";
+           storage_cal_btn.style.padding = "5px";
+           storage_cal_btn.style.marginTop = "-100px";
+           storage_cal_btn.style.marginBottom = "30px";
+           storage_cal_btn.style.marginLeft = "65px";
+           storage_cal_btn.style.borderRadius = "7px";
+           document.getElementById("storage_result_bar").insertBefore(storage_cal_btn,document.getElementById("storage_result_bar").firstChild);
+           has_button1 = false;
+        }
 
 
         energy_info.innerHTML = "";
