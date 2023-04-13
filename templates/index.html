@@ -3385,7 +3385,55 @@ Debug phase _> change back to working versionn -->
         // "        <p id=\"storage_time\"\n" +
         // "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:20px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
         // "            Storage Time </p>\n"
+        if(!has_button1){
+            storage_cal_btn.onclick = function calculate_storage_result(){
+                const exchange_to_usd_r = document.getElementById("exchange_to_usd_value").value;
+                const power_rating_r = document.getElementById("power_rating_value").value;
+                const storage_energy_r = document.getElementById("stored_energy_value").value;
+                const equity_fraction_r = document.getElementById("equity_fraction_value").value;
+                const equity_rate_of_return_r = document.getElementById("equity_rate_of_return_value").value;
+                const bank_interest_rate_r = document.getElementById("bank_interest_rate_value").value;
+                const inflation_rate_r = document.getElementById("inflation_rate_value").value;
+                const energy_purchase_price_r = document.getElementById("energy_purchase_price_value").value;
+                const system_life_r = document.getElementById("system_life_value").value;
+                const pumping_generating_cycle_annully_r = document.getElementById("pumping_cycles_value").value;
+                const water_to_rock_r = document.getElementById("water_to_rock_value").value;
+                const url_1 = 'http://127.0.0.1:5001/phes_results?exchange_rate_to_USD='+exchange_to_usd_r+'&power_rating='+power_rating_r+'&stored_energy='+storage_energy_r+'&water_to_rock='+water_to_rock_r+'&equity_fraction='+equity_fraction_r+'&equity_rate_of_return='+equity_rate_of_return_r+'&bank_interest_rate='+bank_interest_rate_r+'&inflation_rate='+inflation_rate_r+'&energy_purchase_price='+energy_purchase_price_r+'&system_life='+system_life_r+'&pumping_generating_cycles_annually='+pumping_generating_cycle_annully_r+'&head='+head_of_storage+'&separation='+separation_of_storage
+                 fetch(url_1, {
+                     method: 'GET'
+                 }).then(function (response) {
+                     return response.json();
+                 }).then(function (result) {
+                     document.getElementById("cost_power").innerHTML = "Capital Cost-power($/KW): "+result["data"]["power_capital_cost"];
+                     document.getElementById("cost_energy").innerHTML = "Capital Cost-energy($/KWh): "+result["data"]["energy_capital_cost"];
+                     document.getElementById("cost").innerHTML = "Capital Cost($ million): "+result["data"]["capital_cost"];
+                     document.getElementById("cost_class").innerHTML = "Cost Class: "+result["data"]["cost_class"];
+                     document.getElementById("cost_reservoirs").innerHTML = "Cost-Reservoirs($ million): "+result["data"]["reservoir_cost"];
+                     document.getElementById("cost_tunnel").innerHTML = "Cost-Tunnel($ million): "+result["data"]["tunnel_cost"];
+                     document.getElementById("cost_powerhouse").innerHTML = "Cost-Powerhouse($ million): "+result["data"]["powerhouse_cost"];
+                     document.getElementById("total_reservoir_water_vol").innerHTML = "Total Reservoir Water Volume(Mm3): "+result["data"]["total_reservoir_water_volume"];
+                     document.getElementById("available_reservoir_water_vol").innerHTML = "Available Reservoir Water Volume(Mm3): "+result["data"]["available_reservoir_water_volume"];
+                     document.getElementById("rock_vol").innerHTML = "Rock Volume(Mm3): "+result["data"]["rock_volume"];
+                     document.getElementById("slope").innerHTML = "Slope(%): "+result["data"]["slope"];
+                     document.getElementById("hours_of_operation").innerHTML = "Hours of Operation at Full Power(h): "+result["data"]["operation_hours"];
+                     document.getElementById("upper_reservoir_area").innerHTML = "Upper Reservoir Area(Ha): "+result["data"]["upper_reservoir_area"];
+                     document.getElementById("annual_om").innerHTML = "Annual O&M(%): "+result["data"]["annual_om_rate"];
+                     document.getElementById("annual_fixed").innerHTML = "Annual Fixed O&M($ million/MW): "+result["data"]["annual_fixed_om_pmw"];
+                     document.getElementById("annual_variable").innerHTML = "Annual Variable O&M($ million/MW): "+result["data"]["annual_variable_om_pmw"];
+                     document.getElementById("annual_energy_purchase").innerHTML = "Annual Energy Purchase(TWh): "+result["data"]["annual_energy_purchased"];
+                     document.getElementById("annual_energy_sole").innerHTML = "Annual Energy Sold(TWh): "+result["data"]["annual_energy_sold"];
+                     document.getElementById("cost_to_purchase_lost_energy").innerHTML = "Cost to Purchase Lost Energy($/MWh): "+result["data"]["cost_lost_energy_mwh"];
+                     document.getElementById("capital_cost2").innerHTML = "Capital Cost($/MWh): "+result["data"]["capital_cost_mwh"];
+                     document.getElementById("o&m_cost").innerHTML = "O&M Cost($/MWh): "+result["data"]["om_cost_mwh"];
+                     document.getElementById("levelised_cost_of_storage").innerHTML = "Levelised Cost of Storage(%/MWh): "+result["data"]["levelised_cost_of_storage_mwh"];
+                     document.getElementById("ROI_storage").innerHTML = "ROI: "+result["data"]["roi"];
+                     document.getElementById("IRR_storage").innerHTML = "IRR: "+result["data"]["irr"];
+                 })
 
+
+
+            }
+        }
         document.getElementById("volume").innerHTML = "Volume:<br> " + volume + " GL";
         document.getElementById("water_to_rock").innerHTML = "Water to Rock:<br> " + w_r + " Pair";
         // document.getElementById("storage_energy").innerHTML = "Storage Energy:<br> " + energy_battery.toFixed(2) + " GWh";
