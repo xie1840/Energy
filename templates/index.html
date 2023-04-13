@@ -3134,6 +3134,44 @@ Debug phase _> change back to working versionn -->
             toBatteryMode();
         }
     }
+    function reset_fields_understorage(){
+        efficiency = 100;
+        area_value = 1;
+        poe = 0.3441;
+        year = 5;
+        cost_value = 45.74;
+        solar_e = 0;
+        wind_e = 0;
+        speed_w = 0;
+        power_d = 0;
+        pvout = 0;
+        dni = 0;
+        ghi = 0;
+        dif = 0;
+        gti = 0;
+        class_ = 0;
+        head_ = 0;
+        separation = 0;
+        head_of_storage = 0;
+        separation_of_storage = 0;
+        slope = 0;
+        volume = 0;
+        w_r = 0;
+        energy_battery = 0;
+        storage_time = 0;
+        power_storage = 0;
+        country = " ";
+        panel_capacity = 150;
+        // 150 200 selection TBD
+        number_of_wind_turbine = 1;
+        //horizontal pi r^2
+        radius_of_wind_turbine = 25;
+        equipment_cost = 0;
+        // equipment cost 40,000 +45.74*area
+        // 8= 10kw wind turbine cost 500000, radius=22.5
+        lastpt = null;
+        calculationpoint = null;
+    }
 
     function clearall() {
         lastpoint = null;
