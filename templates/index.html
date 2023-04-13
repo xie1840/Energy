@@ -3333,14 +3333,50 @@ Debug phase _> change back to working versionn -->
 
         energy_info.innerHTML = "";
         energy_info.innerHTML =
+             "\n" +
+            "        <p id=\"exchange_to_usd\"\n" +
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            Exchange rate to USD(%): <input type='number' name='power_rating1' id='exchange_to_usd_value' value='0.66' step='0.01' style='border: 1px solid;border-radius: 5px;width: 57px;height: 20px;margin-right: 20px'> </p>\n" +
             "\n" +
-            "        <p id=\"volume\"\n" +
-            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:20px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
-            "            Volume </p>\n" +
+            "        <p id=\"power_rating\"\n" +
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            Power Rating(MW): <input type='number' name='power_rating1' id='power_rating_value' value='1000.0' step='0.1' style='border: 1px solid;border-radius: 5px;width: 64px;height: 20px;margin-right: 20px'> </p>\n" +
+            "\n" +
+            "        <p id=\"stored_energy\"\n" +
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            Stored energy(GMh): <input type='number' name='power_rating1' id='stored_energy_value' value='24.0' step='0.1' style='border: 1px solid;border-radius: 5px;width: 57px;height: 20px;margin-right: 20px'> </p>\n" +
+            "\n" +
+            "        <p id=\"equity_fraction\"\n" +
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            Equity fraction(%): <input type='number' name='power_rating1' id='equity_fraction_value' value='0.30' step='0.01' style='border: 1px solid;border-radius: 5px;width: 57px;height: 20px;margin-right: 20px'> </p>\n" +
+            "\n" +
+            "        <p id=\"equity_rate_of_return\"\n" +
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            Equity rate of return(%): <input type='number' name='power_rating1' id='equity_rate_of_return_value' value='0.10' step='0.01' style='border: 1px solid;border-radius: 5px;width: 57px;height: 20px;margin-right: 20px'> </p>\n" +
+            "\n" +
+            "        <p id=\"bank_interest_rate\"\n" +
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            Bank interest rate(%): <input type='number' name='power_rating1' id='bank_interest_rate_value' value='0.05' step='0.01' style='border: 1px solid;border-radius: 5px;width: 57px;height: 20px;margin-right: 20px'> </p>\n" +
+            "\n" +
+            "        <p id=\"inflation_rate\"\n" +
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            Inflation rate(%): <input type='number' name='power_rating1' id='inflation_rate_value' value='0.015' step='0.001' style='border: 1px solid;border-radius: 5px;width: 57px;height: 20px;margin-right: 20px'> </p>\n" +
+            "\n" +
+            "        <p id=\"energy_purchase_price\"\n" +
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            Energy purchase price($/MWh): <input type='number' name='power_rating1' id='energy_purchase_price_value' value='40.0' step='0.1' style='border: 1px solid;border-radius: 5px;width: 57px;height: 20px;margin-right: 20px'> </p>\n" +
+            "\n" +
+            "        <p id=\"system_life\"\n" +
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            System life(years): <input type='number' name='power_rating1' id='system_life_value' value='60.0' step='0.1' style='border: 1px solid;border-radius: 5px;width: 57px;height: 20px;margin-right: 20px'> </p>\n" +
+            "\n" +
+            "        <p id=\"pumping_generatting_cycles_anually\"\n" +
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            Pumping generating cycles anually(%/year): <input type='number' name='power_rating1' id='pumping_cycles_value' value='150.00' step='0.01' style='border: 1px solid;border-radius: 5px;width: 64px;height: 20px;margin-right: 20px'> </p>\n" +
             "\n" +
             "        <p id=\"water_to_rock\"\n" +
-            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:20px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
-            "            Water to Rock </p>\n"
+            "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:12px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
+            "            Water to Rock(Pair): <input type='number' name='power_rating1' id='water_to_rock_value' value='18.48' step='0.01' style='border: 1px solid;border-radius: 5px;width: 57px;height: 20px;margin-right: 20px'> </p>\n"
         // "\n" +
         // "        <p id=\"storage_energy\"\n" +
         // "           style=\"background:#ffffff ;font-weight:30; font-size: 16px; color:#282c34; padding:20px; padding-left: 35px; margin-left:-20px; margin-top: -20px \">\n" +
